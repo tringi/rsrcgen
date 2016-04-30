@@ -1,0 +1,28 @@
+#include <windows.h>
+ 
+1 VERSIONINFO
+FILEVERSION        1,0,0,104
+PRODUCTVERSION     1,0,0,104
+FILEFLAGSMASK      VS_FFI_FILEFLAGSMASK
+FILEFLAGS          0    
+FILETYPE           VFT_APP
+{
+    BLOCK "StringFileInfo"
+    {
+        BLOCK "040904B0"
+        {
+            VALUE L"FileVersion", L"1.0.0.104"
+            VALUE L"FileDescription", L"Standard Win32 API Meta Information Generator"
+            VALUE L"InternalName", L"RsrcGen"
+            VALUE L"OriginalFilename", L"RsrcGen.exe"
+            VALUE L"ProductName", L"Rsrc Generator"
+            VALUE L"ProductVersion", L"1.0"
+        }
+    }
+    BLOCK "VarFileInfo"
+    {
+        VALUE "Translation", 0x0409, 1200
+    }
+}
+ 
+1 24 "D:\\Projekty\\MetaGen\\RsrcGen.manifest"

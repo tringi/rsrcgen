@@ -1,0 +1,74 @@
+; Example of Usage:
+; Open project properties, navigate to "Configuration Properties / Build Events / Pre-Build Event" and add following to "Command Line":
+;   "$(SolutionDir)tools\rsrcgen.exe" "$(ProjectDir)$(AssemblyName).info" "dir=$(ProjectDir)\" debug=$(UseDebugLibraries) platform=$(PlatformTarget)
+;
+; Optionally replace:
+;   first argument with your actual path to rsrcgen.exe
+;   second argument is path to this .info file (must be full path)
+;   any following argument in format abc=xyz defines variable usable below as %abc%
+
+[generator]
+	autoincrement	= true
+
+[description]
+	product 		= Rsrc Generator
+	productdescription	= Standard Win32 API Meta Information Generator
+	filename		= rsrcgen.exe
+	filedescription		= Standard Win32 API Meta Information Generator
+	internalname		= RsrcGen
+
+	major = 1
+	minor = 0
+	patch = 0
+	build = 104
+
+[versioninfo]
+	filename	= %dir%\%internalname%2.rc
+	language	= 0x0409
+	codepage	= 1200
+	manifest	= true
+	dll		= false
+	fileversion	= %major%,%minor%,%patch%,%build%
+	productversion	= %major%,%minor%,%patch%,%build%
+
+[versioninfo:values]
+;	CompanyName	= %companyname%
+	FileVersion	= %major%.%minor%.%patch%.%build%
+	FileDescription	= %filedescription%
+	InternalName	= %internalname%
+;	LegalCopyright	= Copyright © %YEAR% %companyname%
+;	LegalTrademarks	= 
+	OriginalFilename= %internalname%.exe
+	ProductName	= %product%
+	ProductVersion	= %major%.%minor%
+;	Test		= custom value
+;	SpecialBuild	= Special Build
+;	PrivateBuild	= Private Build
+;	Comments	= Comment
+
+[versioninfo:ff]
+	debug		= %debug%
+	prerelease	= false
+	private		= false
+	special		= false
+
+[manifest]
+	filename	= %dir%\%internalname%.manifest
+	architecture	= %platform%
+
+	assemblyVersion		= %major%.%minor%.%patch%.%build%
+	assemblyIdentityName	= %internalname%.exe
+	assemblyDescription	= %filedescription%
+
+	requestedExecutionLevel	= asInvoker
+
+	dpiAware	= False
+
+	supportedOS:1	= e2011457-1546-43c5-a5fe-008deee3d3f0 Windows Vista/Server 2008
+	supportedOS:2	= 35138b9a-5d96-4fbd-8e2d-a2440225f93a Windows 7/Server 2008 R2
+	supportedOS:3	= 4a2f28e3-53b9-4441-ba9c-d69d4a4a6e38 Windows 8/Server 2012
+	supportedOS:4	= 1f676c76-80e1-4239-95bb-83d0f6d0da78 Windows 8.1/Server 2012 R2
+	supportedOS:5	= 8e0f7a12-bfb3-4fe8-b9a5-48fd50a15a9a Windows 10
+
+;	dependentAssembly:1	= Microsoft.Windows.Common-Controls 6.0.0.0 6595b64144ccf1df
+
