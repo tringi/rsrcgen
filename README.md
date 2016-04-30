@@ -13,10 +13,10 @@ You will need to edit the path to the rsrcgen.exe file above.
 First command line parameter is a **full** path to the .info file (details below). All following parameters should be in ``abc=xyz`` format. These parameters define another variables available in the .info file.
 
 ## Info file
-The .info file is nothing else than a basic Windows INI file. Open the rsrcgen.info file in you favorite text editor to understand what the following talks about.
+The .info file is nothing else than a basic Windows INI file. Open the rsrcgen.info file in you favorite text editor to understand what the following talks about. There are following sections:
 
 #### [generator]
-* ``autoincrement`` - the only option available now: when **true** rsrcgen will search in ``[description]`` for ``build``, increments it and writes it back into the .info file
+* ``autoincrement`` - the only option available now: when **true** the rsrcgen will search in ``[description]`` for ``build``, increments it and writes it back into the .info file
 
 #### [description]
 This section contains predefined variables. Command line parameters take precedence. Variables can be referenced in any value in the .info file using ``%name%`` syntax. Evaluation is recursive so beware endless loops.
@@ -37,7 +37,7 @@ Every value defined here is included into the VERSIONINFO resource. Some value n
 Current build file flags.
 * ``debug`` - debug build
 * ``prerelease`` - not intended for general use
-* ``private`` - private build, specify details int ``PrivateBuild`` in [versioninfo:values]
+* ``private`` - private build, specify details in ``PrivateBuild`` in [versioninfo:values]
 * ``special`` - special build, specify what is special in ``SpecialBuild`` in [versioninfo:values]
 
 #### [manifest]
