@@ -1,8 +1,8 @@
 #include <windows.h>
  
 1 VERSIONINFO
-FILEVERSION        1,0,0,104
-PRODUCTVERSION     1,0,0,104
+FILEVERSION        1,0,0,106
+PRODUCTVERSION     1,0,0,106
 FILEFLAGSMASK      VS_FFI_FILEFLAGSMASK
 FILEFLAGS          0    
 FILETYPE           VFT_APP
@@ -11,7 +11,7 @@ FILETYPE           VFT_APP
     {
         BLOCK "040904B0"
         {
-            VALUE L"FileVersion", L"1.0.0.104"
+            VALUE L"FileVersion", L"1.0.0.106"
             VALUE L"FileDescription", L"Standard Win32 API Meta Information Generator"
             VALUE L"InternalName", L"RsrcGen"
             VALUE L"OriginalFilename", L"RsrcGen.exe"
@@ -25,4 +25,4 @@ FILETYPE           VFT_APP
     }
 }
  
-1 24 "D:\\Projekty\\MetaGen\\RsrcGen.manifest"
+1 24 "D:\\Projekty\\rsrcgen\\RsrcGen.manifest"

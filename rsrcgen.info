@@ -20,7 +20,7 @@
 	major = 1
 	minor = 0
 	patch = 0
-	build = 104
+	build = 106
 
 [versioninfo]
 	filename	= %dir%\%internalname%2.rc
@@ -63,6 +63,7 @@
 	requestedExecutionLevel	= asInvoker
 
 	dpiAware	= False
+	longPathAware	= True
 
 	supportedOS:1	= e2011457-1546-43c5-a5fe-008deee3d3f0 Windows Vista/Server 2008
 	supportedOS:2	= 35138b9a-5d96-4fbd-8e2d-a2440225f93a Windows 7/Server 2008 R2

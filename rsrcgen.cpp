@@ -387,8 +387,15 @@ int main () {
                     if (get (L"manifest", L"requestedExecutionLevel")) {
                         roll_manifest (h, 0x220);
                     };
-                    if (get (L"manifest", L"dpiAware")) {
+                    if (get (L"manifest", L"dpiAware") || get (L"manifest", L"longPathAware")) {
                         roll_manifest (h, 0x230);
+                        if (get (L"manifest", L"dpiAware")) {
+                            roll_manifest (h, 0x233);
+                        };
+                        if (get (L"manifest", L"longPathAware")) {
+                            roll_manifest (h, 0x235);
+                        };
+                        roll_manifest (h, 0x23A);
                     };
                     if (get (L"manifest", L"supportedOS:1")) {
                         roll_manifest (h, 0x240);
