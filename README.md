@@ -46,7 +46,8 @@ Specifies details of generated manifest file.
 * ``architecture`` - binary architecture: x86, amd64, ia64, arm, arm64, etc.; typically passed through command line parameter
 * ``assemblyVersion``, ``assemblyIdentityName``, ``assemblyDescription`` - version and description
 * ``requestedExecutionLevel`` - if present, rsrscgen generates trustInfo block, typically: asInvoker, highestAvailable or requireAdministrator
-* ``dpiAware`` - if present, rsrscgen generates application/windowsSettings block, typically: true or true/pm
+* ``dpiAware`` - if present, rsrscgen generates application/windowsSettings block; typically: true or true/pm
+* ``longPathAware`` - if present, rsrscgen generates application/windowsSettings block; typically: true or false
 * ``supportedOS:#`` - where # is number (1 to N supported OS's, consecutive), if present rsrcgen generates compatibility block; value is GUID followed by optional comment
 * ``dependentAssembly`` - numbered same as supportedOS, value contains name, version and publicKeyToken of the dependent assembly separated by spaces
 
