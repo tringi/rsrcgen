@@ -387,10 +387,14 @@ int main () {
                     if (get (L"manifest", L"requestedExecutionLevel")) {
                         roll_manifest (h, 0x220);
                     };
-                    if (get (L"manifest", L"dpiAware") || get (L"manifest", L"longPathAware")) {
+                    // PerMonitorV2,PerMonitor
+                    if (get (L"manifest", L"dpiAware") || get (L"manifest", L"dpiAwareness") || get (L"manifest", L"longPathAware")) {
                         roll_manifest (h, 0x230);
                         if (get (L"manifest", L"dpiAware")) {
                             roll_manifest (h, 0x233);
+                        };
+                        if (get (L"manifest", L"dpiAwareness")) {
+                            roll_manifest (h, 0x237);
                         };
                         if (get (L"manifest", L"longPathAware")) {
                             roll_manifest (h, 0x235);
@@ -462,3 +466,4 @@ int main () {
     } else
         return GetLastError ();
 }
+

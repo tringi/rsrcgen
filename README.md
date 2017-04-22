@@ -47,6 +47,7 @@ Specifies details of generated manifest file.
 * ``assemblyVersion``, ``assemblyIdentityName``, ``assemblyDescription`` - version and description
 * ``requestedExecutionLevel`` - if present, rsrscgen generates trustInfo block, typically: asInvoker, highestAvailable or requireAdministrator
 * ``dpiAware`` - if present, rsrscgen generates application/windowsSettings block; typically: true or true/pm
+* ``dpiAwareness`` - if present, rsrscgen generates application/windowsSettings block; for Windows 10 1703: "PerMonitorV2,PerMonitor"
 * ``longPathAware`` - if present, rsrscgen generates application/windowsSettings block; typically: true or false
 * ``supportedOS:#`` - where # is number (1 to N supported OS's, consecutive), if present rsrcgen generates compatibility block; value is GUID followed by optional comment
 * ``dependentAssembly`` - numbered same as supportedOS, value contains name, version and publicKeyToken of the dependent assembly separated by spaces

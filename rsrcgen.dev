@@ -1,5 +1,5 @@
 [Project]
-FileName=RsrcGen.dev
+FileName=rsrcgen.dev
 Name=ResourceGenerator
 Type=1
 Ver=2
@@ -10,8 +10,8 @@ PrivateResource=RsrcGen_private.rc
 ResourceIncludes=
 MakeIncludes=
 Compiler=
-CppCompiler=
-Linker=
+CppCompiler=-fno-exceptions_@@_-fno-rtti_@@_-fno-ident_@@_-flto_@@_
+Linker=-fno-exceptions_@@_-fno-rtti_@@_-fno-ident_@@_-flto_@@_
 IsCpp=1
 Icon=
 ExeOutput=
@@ -28,7 +28,7 @@ Folders=
 IncludeVersionInfo=0
 SupportXPThemes=0
 CompilerSet=0
-CompilerSettings=000dj0d0g0110000000001100
+CompilerSettings=000dj010g0110000000001100
 UnitCount=3
 
 [VersionInfo]
