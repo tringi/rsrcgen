@@ -413,16 +413,22 @@ int main () {
                                     *comment = L'\0';
                                     ++comment;
                                     SetEnvironmentVariable (L"manifestoscomment", comment);
-                                } else
-                                    SetEnvironmentVariable (L"manifestoscomment", L" ");
-                                
-                                SetEnvironmentVariable (L"manifestos", guid);
-                                roll_manifest (h, 0x250);
+                                    SetEnvironmentVariable (L"manifestos", guid);
+                                    roll_manifest (h, 0x250);
+                                } else {
+                                    SetEnvironmentVariable (L"manifestos", guid);
+                                    roll_manifest (h, 0x252);
+                                }
                                 
                                 ++i;
                             } else
                                 break;
                         } while (true);
+                        
+                        if (auto maxversiontested = get (L"manifest", L"maxversiontested")) {
+                            SetEnvironmentVariable (L"maxversiontested", maxversiontested);
+                            roll_manifest (h, 0x254);
+                        }
                         
                         roll_manifest (h, 0x260);
                     };

@@ -63,6 +63,8 @@ BEGIN
     0x241   "	<application>"
     
     0x250   "		<supportedOS Id=""{%manifestos%}"" /> <!-- %manifestoscomment% -->"
+    0x252   "		<supportedOS Id=""{%manifestos%}"" />"
+    0x254   "		<maxversiontested Id=""%maxversiontested%"" />"
     
     0x260   "	</application>"
     0x261   "</compatibility>"
