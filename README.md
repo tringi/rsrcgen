@@ -52,6 +52,7 @@ Specifies details of generated manifest file.
 * ``supportedOS:#`` - where # is number (1 to N supported OS's, consecutive), if present rsrcgen generates compatibility block; value is GUID followed by optional comment
 * ``maxversiontested`` - highest OS version number under which the application was tested; for example Windows 10 19H1 is "10.0.18362.0"
 * ``dependentAssembly`` - numbered same as supportedOS, value contains name, version and publicKeyToken of the dependent assembly separated by spaces
+* ``heapType`` - as of Windows 10 build 19041 (20H1) only "SegmentHeap" is supported (less memory usage, more CPU usage tradeoff)
 
 ## Building the program
 Rebuild of the source should be straightforward, Dev-C++ project is included. To refresh manifest and VERSIONINFO for the rsrcgen.exe itself, run:
