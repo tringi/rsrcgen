@@ -399,7 +399,10 @@ int main () {
                         if (get (L"manifest", L"longPathAware")) {
                             roll_manifest (h, 0x235);
                         };
-                        roll_manifest (h, 0x23A);
+                        if (get (L"manifest", L"heapType")) {
+                            roll_manifest (h, 0x239);
+                        };
+                        roll_manifest (h, 0x23D);
                     };
                     if (get (L"manifest", L"supportedOS:1")) {
                         roll_manifest (h, 0x240);
