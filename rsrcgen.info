@@ -15,15 +15,15 @@
 	productdescription	= Standard Win32 API Meta Information Generator
 	filename		= rsrcgen.exe
 	filedescription		= Standard Win32 API Meta Information Generator
-	internalname		= RsrcGen
+	internalname		= rsrcgen
 
 	major = 1
-	minor = 0
+	minor = 4
 	patch = 0
-	build = 106
+	build = 201
 
 [versioninfo]
-	filename	= %dir%\%internalname%2.rc
+	filename	= %dir%\%internalname%-vi.rc
 	language	= 0x0409
 	codepage	= 1200
 	manifest	= true
