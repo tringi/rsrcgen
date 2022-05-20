@@ -5,33 +5,37 @@
 #include <cwchar>
 
 class linear_allocator_base {
-    std::size_t bytes = 0;
+protected:
+    void * const    base;
+    std::size_t     bytes = 0;
 
 protected:
-    void * init (std::size_t reserve, std::size_t commit);
-    void dump (void *);
-    bool commit (void *, std::size_t n);
+    linear_allocator_base (std::size_t reserve, std::size_t commit);
+    ~linear_allocator_base ();
+
+    bool commit (std::size_t n);
 };
 
 template <typename T>
 class linear_allocator : linear_allocator_base {
-    T * const   base;
     T *         next;
     T *         prev;
 
-    bool commit (std::size_t n) {
-        return linear_allocator_base::commit (this->base, (this->next - this->base + n) * sizeof (T));
+    inline bool commit (std::size_t n) {
+        n += this->next - (T *) this->base;
+        n *= sizeof (T);
+
+        if (n > this->bytes) {
+            return this->linear_allocator_base::commit (n);
+        } else
+            return true;
     }
 
 public:
-    explicit linear_allocator (std::size_t reserve, std::size_t commit)
-        : base ((T *) this->init (sizeof (T) * reserve, sizeof (T) * commit))
-        , next (base)
+    explicit linear_allocator (std::size_t reserve = 0x100'0000, std::size_t commit = 0x1000 / sizeof (T))
+        : linear_allocator_base (sizeof (T) * reserve, sizeof (T) * commit)
+        , next (static_cast <T *> (this->base))
         , prev (nullptr) {}
-
-    ~linear_allocator () {
-        this->dump (this->base);
-    }
 
     inline T * alloc (std::size_t n) {
         if (this->commit (n)) {
