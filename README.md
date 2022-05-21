@@ -102,8 +102,7 @@ For all available options see: https://docs.microsoft.com/en-us/windows/win32/sb
 * ``dependentAssembly`` - numbered same as supportedOS, value contains name, version and publicKeyToken of the dependent assembly separated by spaces
 
 ## Building the program
-Rebuild of the source should be straightforward, Dev-C++ project is included. To refresh manifest and VERSIONINFO for the rsrcgen.exe itself, run:
-``rsrcgen.exe PATH\rsrcgen.info dir=PATH debug=false platform=x86``
+Rebuild of the source should be straightforward, Visual Studio solution is included. Before building, place ``rsrcgen.exe`` into tools directory.
 
 ## Notes
 This tool is actually nothing much more than a very simple string replacing tool with predefined content. Written as very simplistic, for single purpose, does not even free allocated memory.
