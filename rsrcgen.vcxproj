@@ -325,8 +325,6 @@
     <ClCompile Include="rsrcgen.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="rsrcgen-test.rc" />
-    <ResourceCompile Include="rsrcgen-test2.rc" />
     <ResourceCompile Include="rsrcgen-vi.rc" />
     <ResourceCompile Include="rsrcgen.rc" />
   </ItemGroup>
