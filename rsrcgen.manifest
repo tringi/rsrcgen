@@ -5,7 +5,7 @@
 <assemblyIdentity
 	name="rsrcgen.exe"
 	processorArchitecture="amd64"
-	version="2.0.0.277"
+	version="2.0.0.281"
 	type="win32" />
 <description>Standard Win32 API Meta Information Generator</description>
 <trustInfo xmlns="urn:schemas-microsoft-com:asm.v2">

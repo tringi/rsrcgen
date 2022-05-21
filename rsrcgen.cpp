@@ -353,7 +353,6 @@ const wchar_t * get_filename (const wchar_t * path) {
 }
 
 int main () {
-    std::printf ("%08X\n", GetVersion ());
     if ((argw = CommandLineToArgvW (GetCommandLineW (), &argc))) {
         if (argc > 1) {
 
@@ -363,7 +362,7 @@ int main () {
             if (!GetFullPathName (argw [1], 32768, infopath, &infofile)) {
                 std::wcscpy (infopath, argw [1]);
             }
-            wprintf (L"rsrcgen %s > ", infofile);
+            wprintf (L"%s > ", infofile);
 
             // common
 

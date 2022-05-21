@@ -20,12 +20,12 @@ bool linear_allocator_base::commit (std::size_t n) {
 }
 
 linear_allocator_base::~linear_allocator_base () {
-    if (auto h = CreateFile (L"dump.dat", GENERIC_WRITE, 0, NULL,
+    /*if (auto h = CreateFile (L"dump.dat", GENERIC_WRITE, 0, NULL,
                              CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL, NULL)) {
         DWORD written;
         WriteFile (h, this->base, (DWORD) this->bytes, &written, NULL);
         CloseHandle (h);
     }// */
-    std::printf ("DEBUG: commit was %zu\n", this->bytes);// */
+    // std::printf ("DEBUG: commit was %zu\n", this->bytes);// */
     // VirtualFree (this->base, 0, MEM_RELEASE);
 }
