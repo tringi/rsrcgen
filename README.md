@@ -85,13 +85,15 @@ For all available options see: https://docs.microsoft.com/en-us/windows/win32/sb
   * ``True`` or ``False``
 * ``heapType`` - 
   * ``SegmentHeap`` - Windows 10 version 2004, less memory usage, more CPU usage tradeoff
-* ``longPathAware`` - 
+* ``longPathAware`` - Windows 10 version 1607, if True then MAX_PATH limit no longer applies to number of APIs
   * ``True`` or ``False``
 * ``activeCodePage`` - 
-  * ``UTF-8`` - Windows 10 version 2004
+  * ``UTF-8`` - Windows 10 version 2004, documentation: [Use UTF-8 code pages in Windows apps](https://docs.microsoft.com/en-us/windows/apps/design/globalizing/use-utf8-code-page)
+  * ``Legacy`` - Windows 11, if CP_ACP is UTF-8 reverts the process to the system locale code page (Windows-1252/437)
+  * ``en-US`` - or other locale name, Windows 11 and later, sets appropriate locale code page
 * ``printerDriverIsolation`` - run user-mode printer driver components in separated process
   * ``True`` or ``False``
-* ``disableWindowFiltering``
+* ``disableWindowFiltering`` - enables application to see immersive windows
   * ``True`` or ``False``
 * ``highResolutionScrollingAware``
   * ``True`` or ``False``
