@@ -65,16 +65,41 @@ For all available options see: https://docs.microsoft.com/en-us/windows/win32/sb
 
 * ``filename`` - path to the resulting .manifest file; if empty or missing none is generated
 * ``architecture`` - binary architecture, typically passed through command line parameter
-  * one of: ``x86``, ``amd64``, ``ia64``, ``arm``, `arm64`
+  * one of: ``x86``, ``amd64``, ``ia64``, ``arm``, ``arm64``
 * ``assemblyVersion``, ``assemblyIdentityName``, ``assemblyDescription`` - version and description
-* ``requestedExecutionLevel`` - if present, rsrscgen generates trustInfo block, typically: asInvoker, highestAvailable or requireAdministrator
-* ``dpiAware`` - if present, rsrscgen generates application/windowsSettings block; typically: true or true/pm
-* ``dpiAwareness`` - if present, rsrscgen generates application/windowsSettings block; for Windows 10 1703: "PerMonitorV2,PerMonitor"
-* ``longPathAware`` - if present, rsrscgen generates application/windowsSettings block; typically: true or false
+* ``requestedExecutionLevel`` - if present, rsrscgen generates trustInfo block, options are:
+  * ``asInvoker``
+  * ``highestAvailable`` 
+  * ``requireAdministrator``
+* ``dpiAware`` - if present, rsrscgen generates application/windowsSettings block
+  * ``False``
+  * ``True`` - 
+  * ``Per monitor`` - per-monitor awareness on Windows 8.1 and later, otherwise same as ``False``
+  * ``True/PM`` - per-monitor or fallback to ``True`` on Windows 8 and earlier.
+* ``dpiAwareness`` - list of `,`-separated entries, overrides ``dpiAware`` element; supported on Windows 10 build 1607
+  * ``Unaware`` - no awareness, disables API to change this programmatically
+  * ``System`` -
+  * ``PerMonitor`` - 
+  * ``PerMonitorV2`` - Windows 10 version 1703, use ``"PerMonitorV2,PerMonitor"``
+* ``gdiScaling`` - Windows 10 version 1703 and later
+  * ``True`` or ``False``
+* ``heapType`` - 
+  * ``SegmentHeap`` - Windows 10 version 2004, less memory usage, more CPU usage tradeoff
+* ``longPathAware`` - 
+  * ``True`` or ``False``
+* ``activeCodePage`` - 
+  * ``UTF-8`` - Windows 10 version 2004
+* ``printerDriverIsolation`` - run user-mode printer driver components in separated process
+  * ``True`` or ``False``
+* ``disableWindowFiltering``
+  * ``True`` or ``False``
+* ``highResolutionScrollingAware``
+  * ``True`` or ``False``
+* ``ultraHighResolutionScrollingAware``
+  * ``True`` or ``False``
 * ``supportedOS:#`` - where # is number (1 to N supported OS's, consecutive), if present rsrcgen generates compatibility block; value is GUID followed by optional comment
 * ``maxversiontested`` - highest OS version number under which the application was tested; for example Windows 10 19H1 is "10.0.18362.0"
 * ``dependentAssembly`` - numbered same as supportedOS, value contains name, version and publicKeyToken of the dependent assembly separated by spaces
-* ``heapType`` - as of Windows 10 build 19041 (20H1) only "SegmentHeap" is supported (less memory usage, more CPU usage tradeoff)
 
 ## Building the program
 Rebuild of the source should be straightforward, Dev-C++ project is included. To refresh manifest and VERSIONINFO for the rsrcgen.exe itself, run:
