@@ -60,9 +60,12 @@ Current build file flags.
 * ``special`` - special build, specify what is special in ``SpecialBuild`` in [versioninfo:values]
 
 #### [manifest]
-Specifies details of generated manifest file.
+Specifies details of generated manifest file.  
+For all available options see: https://docs.microsoft.com/en-us/windows/win32/sbscs/application-manifests
+
 * ``filename`` - path to the resulting .manifest file; if empty or missing none is generated
-* ``architecture`` - binary architecture: x86, amd64, ia64, arm, arm64, etc.; typically passed through command line parameter
+* ``architecture`` - binary architecture, typically passed through command line parameter
+  * one of: ``x86``, ``amd64``, ``ia64``, ``arm``, `arm64`
 * ``assemblyVersion``, ``assemblyIdentityName``, ``assemblyDescription`` - version and description
 * ``requestedExecutionLevel`` - if present, rsrscgen generates trustInfo block, typically: asInvoker, highestAvailable or requireAdministrator
 * ``dpiAware`` - if present, rsrscgen generates application/windowsSettings block; typically: true or true/pm
