@@ -75,6 +75,11 @@
 	longPathAware	= True
 	activeCodePage	= UTF-8
 
+;	printerDriverIsolation = True
+;	disableWindowFiltering = True
+;	highResolutionScrollingAware = True
+;	ultraHighResolutionScrollingAware = True
+
 	supportedOS:1	= e2011457-1546-43c5-a5fe-008deee3d3f0 Windows Vista/Server 2008
 	supportedOS:2	= 35138b9a-5d96-4fbd-8e2d-a2440225f93a Windows 7/Server 2008 R2
 	supportedOS:3	= 4a2f28e3-53b9-4441-ba9c-d69d4a4a6e38 Windows 8/Server 2012
