@@ -22,8 +22,23 @@ The .info file is simple INI file. Open the [rsrcgen.info](rsrcgen.info) file in
 * ``versioncharset`` - character set used for the VERSIONINFO .rc file, none (CP_ACP) by default, can be optionally set to ``UTF-16`` or ``UTF-8``
 * ``charset`` - optionally sets defaults for ``manifestcharset`` and ``versioncharset`` 
 
+#### [include]
+List of additional .info files to search for prefedined variable values in. Example:
+
+    something = ..\..\solution.info
+    abcdefghi = ..\dlls\dllcommon.info
+
+Names must be unique but are otherwise ignored, only the path is significant, absolute or relative (to the current .info file)
+The INI section names are the same.
+
 #### [description]
-This section contains predefined variables. Command line parameters take precedence. Variables can be referenced in any value in the .info file using ``%name%`` syntax. Evaluation is recursive so beware endless loops.
+This section contains predefined variables.
+
+    name = value
+
+Variables can be referenced in any value in the .info file using ``%name%`` syntax. Evaluation is recursive so beware of endless loops.
+
+Note that command line parameters take precedence.
 
 #### [versioninfo]
 Defines details of the VERSIONINFO resource.
