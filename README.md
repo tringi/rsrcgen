@@ -1,22 +1,26 @@
 # rsrcgen
 *Windows Version Info and Manifest generator*
 
-Generates VERSIONINFO-containing Win32 resource file and WinSxS assembly manifest for your EXE or DLL according to details specified in the .info file, optionally incrementing build number.
+Generates VERSIONINFO-containing Win32 resource file and WinSxS assembly manifest for your EXE or DLL according to details specified in the .info file, optionally auto-incrementing build number.
 
-To use as part of the build process in Visual Studio, in project properties, navigate to "Configuration Properties / Build Events / Pre-Build Event" and add following to the "Command Line" field:
+To use as part of the build process in Visual Studio, in project properties, navigate to:  
+*"Configuration Properties / Build Events / Pre-Build Event"* and add following line to the *"Command Line"* field:
 
     "$(SolutionDir)rsrcgen.exe" "$(ProjectDir)$(AssemblyName).info" "dir=$(ProjectDir)\" debug=$(UseDebugLibraries) platform=$(PlatformTarget)
 
 You will need to edit the path to the rsrcgen.exe file above.
 
 ## Command line
-First command line parameter is a **full** path to the .info file (details below). All following parameters should be in ``abc=xyz`` format. These parameters define another variables available in the .info file.
+First command line parameter is the .info file (details below). All following parameters should be in ``abc=xyz`` format. These parameters define another variables available in the .info file.
 
 ## Info file
-The .info file is nothing else than a basic Windows INI file. Open the rsrcgen.info file in you favorite text editor to understand what the following talks about. There are following sections:
+The .info file is simple INI file. Open the [rsrcgen.info](rsrcgen.info) file in you favorite text editor as an example. The file contains following sections:
 
 #### [generator]
-* ``autoincrement`` - the only option available now: when **true** the rsrcgen will search in ``[description]`` for ``build``, increments it and writes it back into the .info file
+* ``autoincrement`` - when **true** the rsrcgen will search in ``[description]`` for ``build``, increments it and writes it back into the .info file
+* ``manifestcharset`` - character set used for the .manifest file, ``UTF-8`` by default, can be optionally set to ``UTF-16``
+* ``versioncharset`` - character set used for the VERSIONINFO .rc file, none (CP_ACP) by default, can be optionally set to ``UTF-16`` or ``UTF-8``
+* ``charset`` - optionally sets defaults for ``manifestcharset`` and ``versioncharset`` 
 
 #### [description]
 This section contains predefined variables. Command line parameters take precedence. Variables can be referenced in any value in the .info file using ``%name%`` syntax. Evaluation is recursive so beware endless loops.

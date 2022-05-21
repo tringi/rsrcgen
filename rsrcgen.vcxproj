@@ -241,7 +241,7 @@
       <TerminalServerAware>true</TerminalServerAware>
     </Link>
     <PreBuildEvent>
-      <Command>"$(SolutionDir)tools\rsrcgen.exe" "$(ProjectDir)$(AssemblyName).info" "dir=$(ProjectDir)\" debug=$(UseDebugLibraries) platform=arm64</Command>
+      <Command>"$(SolutionDir)tools\rsrcgen.exe" "$(ProjectDir)$(AssemblyName).info" "dir=$(ProjectDir)\" debug=$(UseDebugLibraries) platform=$(ProcessorArchitecture)</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -316,15 +316,23 @@
       <TerminalServerAware>true</TerminalServerAware>
     </Link>
     <PreBuildEvent>
-      <Command>"$(SolutionDir)tools\rsrcgen.exe" "$(ProjectDir)$(AssemblyName).info" "dir=$(ProjectDir)\" debug=$(UseDebugLibraries) platform=arm64</Command>
+      <Command>"$(SolutionDir)tools\rsrcgen.exe" "$(ProjectDir)$(AssemblyName).info" "dir=$(ProjectDir)\" debug=$(UseDebugLibraries) platform=$(ProcessorArchitecture)</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="alloc.cpp" />
+    <ClCompile Include="file.cpp" />
     <ClCompile Include="rsrcgen.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ResourceCompile Include="rsrcgen-test.rc" />
+    <ResourceCompile Include="rsrcgen-test2.rc" />
     <ResourceCompile Include="rsrcgen-vi.rc" />
     <ResourceCompile Include="rsrcgen.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="alloc.h" />
+    <ClInclude Include="file.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

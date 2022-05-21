@@ -1,14 +1,18 @@
 ; Example of Usage:
 ; Open project properties, navigate to "Configuration Properties / Build Events / Pre-Build Event" and add following to "Command Line":
+;
 ;   "$(SolutionDir)tools\rsrcgen.exe" "$(ProjectDir)$(AssemblyName).info" "dir=$(ProjectDir)\" debug=$(UseDebugLibraries) platform=$(PlatformTarget)
 ;
 ; Optionally replace:
-;   first argument with your actual path to rsrcgen.exe
-;   second argument is path to this .info file (must be full path)
-;   any following argument in format abc=xyz defines variable usable below as %abc%
+;   1. argument with your actual path to rsrcgen.exe
+;   2. argument is path to this .info file (must be full path)
+;   N. any following argument in format abc=xyz defines variable usable below as %abc%
 
 [generator]
 	autoincrement	= true
+
+	;manifestcharset	= UTF-16
+	;versioncharset	= UTF-8
 
 [description]
 	product 		= Rsrc Generator
@@ -16,11 +20,12 @@
 	filename		= rsrcgen.exe
 	filedescription		= Standard Win32 API Meta Information Generator
 	internalname		= rsrcgen
+	companyname		= TRIM CORE SOFTWARE s.r.o.
 
-	major = 1
-	minor = 4
+	major = 2
+	minor = 0
 	patch = 0
-	build = 201
+	build = 277
 
 [versioninfo]
 	filename	= %dir%\%internalname%-vi.rc
@@ -36,12 +41,12 @@
 	FileVersion	= %major%.%minor%.%patch%.%build%
 	FileDescription	= %filedescription%
 	InternalName	= %internalname%
-;	LegalCopyright	= Copyright © %YEAR% %companyname%
+	LegalCopyright	= © %YEAR% %companyname%
 ;	LegalTrademarks	= 
 	OriginalFilename= %internalname%.exe
 	ProductName	= %product%
 	ProductVersion	= %major%.%minor%
-;	Test		= custom value
+;	CustomTestValue	= custom value content
 ;	SpecialBuild	= Special Build
 ;	PrivateBuild	= Private Build
 ;	Comments	= Comment
@@ -63,7 +68,12 @@
 	requestedExecutionLevel	= asInvoker
 
 	dpiAware	= False
+	dpiAwareness	= Unaware
+	gdiScaling	= False
+
+	heapType	= SegmentHeap
 	longPathAware	= True
+	activeCodePage	= UTF-8
 
 	supportedOS:1	= e2011457-1546-43c5-a5fe-008deee3d3f0 Windows Vista/Server 2008
 	supportedOS:2	= 35138b9a-5d96-4fbd-8e2d-a2440225f93a Windows 7/Server 2008 R2

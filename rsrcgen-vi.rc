@@ -1,8 +1,8 @@
 #include <windows.h>
  
 1 VERSIONINFO
-FILEVERSION        1,1,0,110
-PRODUCTVERSION     1,1,0,110
+FILEVERSION        2,0,0,277
+PRODUCTVERSION     2,0,0,277
 FILEFLAGSMASK      VS_FFI_FILEFLAGSMASK
 FILEFLAGS          0    
 FILETYPE           VFT_APP
@@ -11,12 +11,13 @@ FILETYPE           VFT_APP
     {
         BLOCK "040904B0"
         {
-            VALUE L"FileVersion", L"1.1.0.110"
+            VALUE L"FileVersion", L"2.0.0.277"
             VALUE L"FileDescription", L"Standard Win32 API Meta Information Generator"
             VALUE L"InternalName", L"rsrcgen"
+            VALUE L"LegalCopyright", L"\x00a9 2022 TRIM CORE SOFTWARE s.r.o."
             VALUE L"OriginalFilename", L"rsrcgen.exe"
             VALUE L"ProductName", L"Rsrc Generator"
-            VALUE L"ProductVersion", L"1.1"
+            VALUE L"ProductVersion", L"2.0"
         }
     }
     BLOCK "VarFileInfo"
