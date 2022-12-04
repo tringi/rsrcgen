@@ -1,6 +1,8 @@
 # rsrcgen
 *Windows Version Info and Manifest generator*
 
+:warning: 2.0.0 is broken, pull and revert to previous prebuilt EXEs for usable version :warning:
+
 Generates VERSIONINFO-containing Win32 resource file and WinSxS assembly manifest for your EXE or DLL according to details specified in the .info file, optionally auto-incrementing build number.
 
 To use as part of the build process in Visual Studio, in project properties, navigate to:  
